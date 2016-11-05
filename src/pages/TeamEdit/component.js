@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Avatar from 'material-ui/Avatar';
-
+import {Row, Col} from 'reactstrap';
 
 class TeamEdit extends Component {
 
@@ -16,14 +16,22 @@ class TeamEdit extends Component {
 
     render(){
 
+        if(!this.props.team) return null;
+
         const { team: { image } } = this.props;
 
         return (
 
-            <div>
+            <div style={{ padding: '16px' }}>
 
-                <Avatar size={160} src={image} />
-
+                <Row>
+                <Col md={2}>
+                    <Avatar size={160} src={image} />
+                </Col>
+                <Col md={8}>
+                    <h1> Time </h1>
+                </Col>
+                </Row>
             </div>
         );
 
