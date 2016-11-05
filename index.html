@@ -1,0 +1,201 @@
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .timer {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .wrapper,
+        .teams {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .wrapper {
+            background: #333;
+        }
+        
+        .team {
+            box-sizing: border-box;
+            position: relative;
+            background: red;
+            height: 100vh;
+            width: calc(100vw / 14);
+            float: left;
+        }
+        
+        .team-bar {
+            width: 40%;
+            background: #ccc;
+            height: 100%;
+            margin: 0 auto;
+        }
+        
+        .team-bar-internal {
+            background: #000;
+            width: 100%;
+        }
+        
+        .team-logo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #555;
+            background-size: cover;
+            width: 100%;
+            height: calc(100vw / 14);
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="timer">00:00</div>
+        <div class="teams">
+            <!-- Team #0 -->
+            <div class="team">
+                <div class="team-bar">
+                    <div id="team-0" class="team-bar-internal"></div>
+                </div>
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-1" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-2" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-3" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-4" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-5" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-6" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-7" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-8" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-9" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-10" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-11" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-12" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+            <!-- Team #0 -->
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-13" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // set colors
+        document.getElementById("team-0").style.backgroundColor = "blue";
+
+        // team 0
+        let _team_0 = 100 - 40;
+
+        document.getElementById("team-0").style.height = _team_0 + "%";
+
+        // team 1
+        let _team_1 = 100 - 40;
+
+        document.getElementById("team-1").style.height = _team_0 + "%";
+    </script>
+
+</body>
+
+</html>
