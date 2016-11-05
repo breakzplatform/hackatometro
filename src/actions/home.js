@@ -1,6 +1,7 @@
 import firebase from '../firebase';
 
 export const TEAMS_UPDATE_TEAM = "TEAMS_UPDATE_TEAM";
+export const TOGGLE_CONFIRMATION_DIALOG = "TOGGLE_CONFIRMATION_DIALOG";
 
 
 var firebaseTeams = firebase.database().ref("teams");
@@ -29,4 +30,12 @@ export function watchTeams() {
 
     }
 
+}
+
+
+export function toggleConfirmationDialog(value) {
+    return {
+      type: TOGGLE_CONFIRMATION_DIALOG,
+      value
+    }
 }
