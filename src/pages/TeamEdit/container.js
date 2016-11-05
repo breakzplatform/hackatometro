@@ -1,6 +1,6 @@
 import component from './component';
 import {connect} from 'react-redux';
-import {watchTeams, stopWatchTeams} from '../../actions/home';
+import {watchTeams, stopWatchTeams, setCompleted} from '../../actions/home';
 import {withRouter} from 'react-router';
 
 
@@ -9,12 +9,15 @@ const mapStateToProps = (state, props) => ({
 });
 
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, props) => ({
     watch(){
         dispatch(watchTeams());
     },
     unwatch(){
         dispatch(stopWatchTeams());
+    },
+    setCompleted(number){
+        dispatch(setCompleted(props.params.id, number));
     }
 });
 
