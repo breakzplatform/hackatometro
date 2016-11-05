@@ -4,9 +4,25 @@ import Slider from 'material-ui/Slider';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {Row, Col} from 'reactstrap';
+import debounce from 'debounce';
 
 class TeamEdit extends Component {
 
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        completedValue: 0
+      };
+
+      this.save = debounce(this.props.toggleConfirmationDialog.bind(this, true), 500);
+    }
+
+    componentWillReceiveProps(nextProps) {
+      if ('team' in nextProps && !nextProps.confirmationDialogOpen) {
+        this.setState({completedValue: nextProps.team.completed});
+      }
+    }
 
     componentDidMount(){
         this.props.watch();
@@ -16,8 +32,14 @@ class TeamEdit extends Component {
         this.props.unwatch();
     }
 
-    onSliderChange() {
-      console.log('ok')
+    cancel() {
+      this.props.toggleConfirmationDialog(false);
+      this.setState({completedValue: this.props.team.completed});
+    }
+
+    onSliderChange(event, value) {
+      this.setState({completedValue: value});
+      this.save();
     }
 
     renderConfirmationDialog() {
@@ -25,13 +47,13 @@ class TeamEdit extends Component {
         <FlatButton
           label="Cancelar"
           primary={true}
-          onTouchTap={() => this.props.toggleConfirmationDialog(false)}
+          onTouchTap={this.cancel.bind(this)}
         />,
         <FlatButton
           label="Confirmar"
           primary={true}
           keyboardFocused={true}
-          onTouchTap={() => this.props.toggleConfirmationDialog(true)}
+          onTouchTap={() => this.props.setTeamCompletedValue(this.state.completedValue)}
         />,
       ];
 
@@ -54,7 +76,7 @@ class TeamEdit extends Component {
 
         if(!this.props.team) return null;
 
-        const { team: { image, completed } } = this.props;
+        const { team: { image } } = this.props;
 
         return (
 
@@ -67,7 +89,7 @@ class TeamEdit extends Component {
                 <Col md={8}>
                     <h1> Time </h1>
                     <Slider
-                      defaultValue={completed}
+                      value={this.state.completedValue}
                       min={0}
                       max={100}
                       step={1}

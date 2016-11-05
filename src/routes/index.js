@@ -4,8 +4,6 @@ import App from "../App";
 import Home from '../pages/Home';
 import TeamEdit from '../pages/TeamEdit';
 
-console.log(TeamEdit);
-
 export default (
     <Router history={browserHistory} >
         <Route path="/" component={App}>

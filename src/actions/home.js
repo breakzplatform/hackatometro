@@ -1,10 +1,12 @@
 import firebase from '../firebase';
 
 export const TEAMS_UPDATE_TEAM = "TEAMS_UPDATE_TEAM";
+export const TEAM_UPDATE_COMPLETED_VALUE = "TEAM_UPDATE_COMPLETED_VALUE";
 export const TOGGLE_CONFIRMATION_DIALOG = "TOGGLE_CONFIRMATION_DIALOG";
 
 
-var firebaseTeams = firebase.database().ref("teams");
+const db = firebase.database();
+var firebaseTeams = db.ref("teams");
 
 export function stopWatchTeams() {
     return function () {
@@ -38,4 +40,11 @@ export function toggleConfirmationDialog(value) {
       type: TOGGLE_CONFIRMATION_DIALOG,
       value
     }
+}
+
+export function setTeamCompletedValue(teamId, value) {
+  return function (dispatch) {
+    dispatch(toggleConfirmationDialog(false));
+    db.ref(`teams/${teamId}/completed`).set(value);
+  }
 }

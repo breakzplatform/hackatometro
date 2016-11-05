@@ -1,6 +1,6 @@
 import component from './component';
 import {connect} from 'react-redux';
-import {watchTeams, stopWatchTeams, toggleConfirmationDialog} from '../../actions/home';
+import {watchTeams, stopWatchTeams, toggleConfirmationDialog, setTeamCompletedValue} from '../../actions/home';
 import {withRouter} from 'react-router';
 
 
@@ -10,7 +10,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, props) => ({
     watch(){
         dispatch(watchTeams());
     },
@@ -18,7 +18,10 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(stopWatchTeams());
     },
     toggleConfirmationDialog(value) {
-      dispatch(toggleConfirmationDialog(!!value));
+      dispatch(toggleConfirmationDialog(value));
+    },
+    setTeamCompletedValue(value) {
+      dispatch(setTeamCompletedValue(props.params.id, value));
     }
 });
 
