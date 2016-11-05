@@ -30,22 +30,34 @@
         .team {
             box-sizing: border-box;
             position: relative;
-            background: red;
             height: 100vh;
-            width: calc(100vw / 14);
+            width: calc(100vw / 15);
             float: left;
         }
         
         .team-bar {
             width: 40%;
-            background: #ccc;
             height: 100%;
             margin: 0 auto;
+            position: relative;
         }
         
         .team-bar-internal {
-            background: #000;
-            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        .vertical-text {
+            position: absolute;
+            bottom: calc((100vw / 15) + 20px);
+            transform: rotate(-90deg);
+            transform-origin: left top 0;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: Helvetica, Arial;
+            font-size: 2em;
         }
         
         .team-logo {
@@ -55,8 +67,7 @@
             background: #555;
             background-size: cover;
             width: 100%;
-            height: calc(100vw / 14);
-            border-radius: 100%;
+            height: calc(100vw / 15);
         }
     </style>
 </head>
@@ -64,22 +75,28 @@
 <body>
 
     <div class="wrapper">
-        <div class="timer">00:00</div>
+        <div class="timer">
+            <div class="tc_div_14273" style="width:100vw;height:200px; margin: 20px auto;"><a title="ENTREGA DO CÓDIGO" href="//www.tickcounter.com/widget/countdown/1478422800000/america-sao_paulo/hms/33339CA74F4F4F439CA74/400/C0C0C00/ENTREGA_DO_C%C3%93DIGO">ENTREGA DO CÓDIGO</a><a title="Countdown" href="https://www.tickcounter.com/">Countdown</a></div>
+        </div>
         <div class="teams">
             <!-- Team #0 -->
             <div class="team">
                 <div class="team-bar">
-                    <div id="team-0" class="team-bar-internal"></div>
+                    <div id="team-0" class="team-bar-internal">
+                        <div class="vertical-text">Bilada</div>
+                    </div>
                 </div>
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-0"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
                 <div class="team-bar ">
-                    <div id="team-1" class="team-bar-internal"></div>
+                    <div id="team-1" class="team-bar-internal">
+                        <div class="vertical-text">Bilada</div>
+                    </div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-1"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -87,7 +104,7 @@
                     <div id="team-2" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-2"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -95,7 +112,7 @@
                     <div id="team-3" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-3"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -103,7 +120,7 @@
                     <div id="team-4" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-4"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -111,7 +128,7 @@
                     <div id="team-5" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-5"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -119,7 +136,7 @@
                     <div id="team-6" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-6"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -127,7 +144,7 @@
                     <div id="team-7" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-7"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -135,7 +152,7 @@
                     <div id="team-8" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-8"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -143,7 +160,7 @@
                     <div id="team-9" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-9"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -151,7 +168,7 @@
                     <div id="team-10" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-10"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -159,7 +176,7 @@
                     <div id="team-11" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-11"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -167,7 +184,7 @@
                     <div id="team-12" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-12"></div>
             </div>
             <!-- Team #0 -->
             <div class="team ">
@@ -175,25 +192,231 @@
                     <div id="team-13" class="team-bar-internal"></div>
                 </div>
 
-                <div class="team-logo" style="background: url('http://lorempixel.com/400/400/') #333;"></div>
+                <div class="team-logo" id="team-logo-13"></div>
+            </div>
+
+            <div class="team ">
+                <div class="team-bar ">
+                    <div id="team-14" class="team-bar-internal"></div>
+                </div>
+
+                <div class="team-logo" id="team-logo-14"></div>
             </div>
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 
+
+    <script type="text/javascript">
+        (function() {
+            var s = document.createElement('script');
+            s.src = "//www.tickcounter.com/loader.js";
+            s.async = 'async';
+            s.onload = function() {
+                tc_widget_loader('tc_div_14273', 'Countdown', 650, ["1478422800000", "america-sao_paulo", "hms", "33333339CA74F4F4F439CA74", "400", "C0C0C00", "ENTREGA DO CÓDIGO"]);
+            };
+            s.onreadystatechange = s.onload;
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(s);
+        }());
+    </script>
     <script>
-        // set colors
-        document.getElementById("team-0").style.backgroundColor = "blue";
+        var app = firebase.initializeApp({
+            apiKey: "AIzaSyAAulvVAg78Y-qHpeZ5kYONYWA7_3dHD9k",
+            authDomain: "hackatometro-admin.firebaseapp.com",
+            databaseURL: "https://hackatometro-admin.firebaseio.com",
+            storageBucket: "hackatometro-admin.appspot.com",
+            messagingSenderId: "487302627815"
+        });
 
-        // team 0
-        let _team_0 = 100 - 40;
+        // ------------------------------------------------------------ cores
+        // cor 0
+        firebase.database().ref('teams/0/color').on('value', function(snapshot) {
+            document.getElementById("team-0").style.backgroundColor = snapshot.val();
+        });
+        // cor 1
+        firebase.database().ref('teams/1/color').on('value', function(snapshot) {
+            document.getElementById("team-1").style.backgroundColor = snapshot.val();
+        });
+        // cor 2
+        firebase.database().ref('teams/2/color').on('value', function(snapshot) {
+            document.getElementById("team-2").style.backgroundColor = snapshot.val();
+        });
+        // cor 3
+        firebase.database().ref('teams/3/color').on('value', function(snapshot) {
+            document.getElementById("team-3").style.backgroundColor = snapshot.val();
+        });
+        // cor 4
+        firebase.database().ref('teams/4/color').on('value', function(snapshot) {
+            document.getElementById("team-4").style.backgroundColor = snapshot.val();
+        });
+        // cor 5
+        firebase.database().ref('teams/5/color').on('value', function(snapshot) {
+            document.getElementById("team-5").style.backgroundColor = snapshot.val();
+        });
+        // cor 6
+        firebase.database().ref('teams/6/color').on('value', function(snapshot) {
+            document.getElementById("team-6").style.backgroundColor = snapshot.val();
+        });
+        // cor 7
+        firebase.database().ref('teams/7/color').on('value', function(snapshot) {
+            document.getElementById("team-7").style.backgroundColor = snapshot.val();
+        });
+        // cor 8
+        firebase.database().ref('teams/8/color').on('value', function(snapshot) {
+            document.getElementById("team-8").style.backgroundColor = snapshot.val();
+        });
+        // cor 9
+        firebase.database().ref('teams/9/color').on('value', function(snapshot) {
+            document.getElementById("team-9").style.backgroundColor = snapshot.val();
+        });
+        // cor 10
+        firebase.database().ref('teams/10/color').on('value', function(snapshot) {
+            document.getElementById("team-10").style.backgroundColor = snapshot.val();
+        });
+        // cor 11
+        firebase.database().ref('teams/11/color').on('value', function(snapshot) {
+            document.getElementById("team-11").style.backgroundColor = snapshot.val();
+        });
+        // cor 12
+        firebase.database().ref('teams/12/color').on('value', function(snapshot) {
+            document.getElementById("team-12").style.backgroundColor = snapshot.val();
+        });
+        // cor 13
+        firebase.database().ref('teams/13/color').on('value', function(snapshot) {
+            document.getElementById("team-13").style.backgroundColor = snapshot.val();
+        });
+        // cor 13
+        firebase.database().ref('teams/14/color').on('value', function(snapshot) {
+            document.getElementById("team-14").style.backgroundColor = snapshot.val();
+        });
 
-        document.getElementById("team-0").style.height = _team_0 + "%";
+        // ------------------------------------------------------------ % completed
+        firebase.database().ref('teams/0/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-0").style.height = res + "%";
+        });
+        firebase.database().ref('teams/1/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-1").style.height = res + "%";
+        });
+        firebase.database().ref('teams/2/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-2").style.height = res + "%";
+        });
+        firebase.database().ref('teams/3/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-3").style.height = res + "%";
+        });
+        firebase.database().ref('teams/4/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-4").style.height = res + "%";
+        });
+        firebase.database().ref('teams/5/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-5").style.height = res + "%";
+        });
+        firebase.database().ref('teams/6/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-6").style.height = res + "%";
+        });
+        firebase.database().ref('teams/7/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-7").style.height = res + "%";
+        });
+        firebase.database().ref('teams/8/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-8").style.height = res + "%";
+        });
+        firebase.database().ref('teams/9/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-9").style.height = res + "%";
+        });
+        firebase.database().ref('teams/10/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-10").style.height = res + "%";
+        });
+        firebase.database().ref('teams/11/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-11").style.height = res + "%";
+        });
+        firebase.database().ref('teams/12/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-12").style.height = res + "%";
+        });
+        firebase.database().ref('teams/13/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-13").style.height = res + "%";
+        });
+        firebase.database().ref('teams/14/completed').on('value', function(snapshot) {
+            var res = snapshot.val();
+            document.getElementById("team-14").style.height = res + "%";
+        });
 
-        // team 1
-        let _team_1 = 100 - 40;
 
-        document.getElementById("team-1").style.height = _team_0 + "%";
+
+        // ------------------------------------------------------------ image
+        // cor 0
+        firebase.database().ref('teams/0/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-0").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 1
+        firebase.database().ref('teams/1/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-1").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 2
+        firebase.database().ref('teams/2/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-2").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 3
+        firebase.database().ref('teams/3/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-3").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 4
+        firebase.database().ref('teams/4/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-4").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 5
+        firebase.database().ref('teams/5/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-5").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 6
+        firebase.database().ref('teams/6/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-6").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 7
+        firebase.database().ref('teams/7/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-7").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 8
+        firebase.database().ref('teams/8/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-8").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 9
+        firebase.database().ref('teams/9/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-9").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 10
+        firebase.database().ref('teams/10/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-10").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 11
+        firebase.database().ref('teams/11/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-11").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 12
+        firebase.database().ref('teams/12/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-12").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+        // cor 13
+        firebase.database().ref('teams/13/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-13").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
+
+        firebase.database().ref('teams/14/image').on('value', function(snapshot) {
+            document.getElementById("team-logo-14").style.background = "url('" + snapshot.val() + "') #333 center center / cover";
+        });
     </script>
 
 </body>
