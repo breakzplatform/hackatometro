@@ -83,6 +83,19 @@
             top: 20px;
             z-index: 10;
         }
+
+        .links {
+            text-align: center;
+            color: white;
+            color: sans-serif;
+            top: 50%;
+            position: absolute;
+            width: 100%;
+            margin-top: -100px;
+            z-index: 0999999;
+            opacity: 0.75;
+            
+        }
     </style>
 </head>
 
@@ -90,6 +103,12 @@
 
     <div class="wrapper">
         <img src="Logo31.png" class="logo" />
+        
+        <div class="links">
+            <div class="linha-1"> </div>
+            <div class="linha-2"> </div>
+            <div class="linha-3"> </div>
+        </div>
         <div class="timer">
             <div class="tc_div_14273" style="width:100vw;height:200px; margin: 20px auto;"><a title="ENTREGA DO CÓDIGO" href="//www.tickcounter.com/widget/countdown/1478422800000/america-sao_paulo/hms/33339CA74F4F4F439CA74/400/C0C0C00/ENTREGA_DO_C%C3%93DIGO">ENTREGA DO CÓDIGO</a><a title="Countdown" href="https://www.tickcounter.com/">Countdown</a></div>
         </div>
@@ -269,6 +288,21 @@
             databaseURL: "https://hackatometro-admin.firebaseio.com",
             storageBucket: "hackatometro-admin.appspot.com",
             messagingSenderId: "487302627815"
+        });
+
+        firebase.database().ref('anuncio').on('value', function(snapshot){
+
+            var links = snapshot.val();
+
+            if('link-1' in links) document.querySelector(".links .linha-1").textContent = links['link-1'];
+            else document.querySelector(".links .linha-1").textContent = ''
+
+            if('link-2' in links) document.querySelector(".links .linha-2").textContent = links['link-2'];
+            else document.querySelector(".links .linha-2").textContent = ''
+           
+            if('link-3' in links) document.querySelector(".links .linha-3").textContent = links['link-3'];
+            else document.querySelector(".links .linha-3").textContent = ''
+
         });
 
         firebase.database().ref('teams').on('value', function (snapshot) {
