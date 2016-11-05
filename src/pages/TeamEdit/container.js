@@ -1,7 +1,6 @@
 import component from './component';
 import {connect} from 'react-redux';
 import {watchTeams, stopWatchTeams, setCompleted, toggleConfirmationDialog} from '../../actions/home';
-import {watchTeams, stopWatchTeams, toggleConfirmationDialog} from '../../actions/home';
 import {withRouter} from 'react-router';
 
 
