@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import Avatar from 'material-ui/Avatar';
+import Slider from 'material-ui/Slider';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import {Row, Col} from 'reactstrap';
 
 const headerStyle = {
@@ -20,14 +23,47 @@ class TeamEdit extends Component {
     componentWillUnmount(){
         this.props.unwatch();
     }
- 
+
+    onSliderChange() {
+      console.log('ok')
+    }
+
+    renderConfirmationDialog() {
+      const actions = [
+        <FlatButton
+          label="Cancelar"
+          primary={true}
+          onTouchTap={() => this.props.toggleConfirmationDialog(false)}
+        />,
+        <FlatButton
+          label="Confirmar"
+          primary={true}
+          keyboardFocused={true}
+          onTouchTap={() => this.props.toggleConfirmationDialog(true)}
+        />,
+      ];
+
+      return (
+        <div>
+          <Dialog
+            title="Opaaaaaa"
+            actions={actions}
+            modal={false}
+            open={this.props.confirmationDialogOpen}
+            onRequestClose={() => this.props.toggleConfirmationDialog(false)}
+          >
+            Você tem certeza de quer aplicar estas mudanças?
+          </Dialog>
+        </div>
+      );
+    }
 
     render(){
 
         if(!this.props.team) return null;
-
-        const { team: { image, name } } = this.props;
-
+ 
+        const { team: { image, name, completed } } = this.props;
+ 
         return (
 
             <div style={{ padding: '16px' }}>
@@ -38,6 +74,15 @@ class TeamEdit extends Component {
                 </Col>
                 <Col md={8}>
                     <h1 style={headerStyle}> {name} </h1>
+
+                    <Slider
+                      defaultValue={completed}
+                      min={0}
+                      max={100}
+                      step={1}
+                      onChange={this.onSliderChange.bind(this)}
+                      />
+                      {this.renderConfirmationDialog()}
                 </Col>
                 </Row>
             </div>

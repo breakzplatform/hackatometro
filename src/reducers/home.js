@@ -1,7 +1,8 @@
 import { TEAMS_UPDATE_TEAM } from '../actions/home';
 
 const INITIAL_STATE = {
-    teams: {}
+    teams: {},
+    confirmationDialogOpen: false
 }
 
 export default function (state = INITIAL_STATE, action) {
