@@ -1,6 +1,6 @@
 import component from './component';
 import {connect} from 'react-redux';
-import {watchTeams, stopWatchTeams, toggleConfirmationDialog, setTeamCompletedValue} from '../../actions/home';
+import {watchTeams, stopWatchTeams, toggleConfirmationDialog, setTeamCompletedValue, setCompleted} from '../../actions/home';
 import {withRouter} from 'react-router';
 
 
@@ -16,6 +16,10 @@ const mapDispatchToProps = (dispatch, props) => ({
     },
     unwatch(){
         dispatch(stopWatchTeams());
+    },
+
+    setCompleted(number){
+        dispatch(setCompleted(props.params.id, number));
     },
     toggleConfirmationDialog(value) {
       dispatch(toggleConfirmationDialog(value));

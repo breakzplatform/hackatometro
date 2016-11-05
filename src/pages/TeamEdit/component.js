@@ -6,6 +6,21 @@ import FlatButton from 'material-ui/FlatButton';
 import {Row, Col} from 'reactstrap';
 import debounce from 'debounce';
 
+const headerStyle = {
+    fontSize: '3em',
+    lineHeight: '3em',
+    color: '#888',
+    fontWeight: 'lighter',
+    textAlign: 'center'
+}
+
+const percentageStyle = {
+  textAlign: 'center',
+  fontSize: '4em',
+  color: '#00bcd4',
+  fontWeight: 'bold'
+}
+
 class TeamEdit extends Component {
 
     constructor(props) {
@@ -76,18 +91,23 @@ class TeamEdit extends Component {
 
         if(!this.props.team) return null;
 
-        const { team: { image } } = this.props;
+        const { team: { image, name, completed } } = this.props;
 
         return (
 
             <div style={{ padding: '16px' }}>
 
                 <Row>
-                <Col md={2}>
+                <Col md={2} style={{ textAlign: "center" }}>
                     <Avatar size={160} src={image} />
                 </Col>
                 <Col md={8}>
-                    <h1> Time </h1>
+                    <h1 style={headerStyle}> {name} </h1>
+                </Col>
+                </Row>
+                <Row>
+                <Col>
+                    <p style={percentageStyle}>{this.state.completedValue}%</p>
                     <Slider
                       value={this.state.completedValue}
                       min={0}
