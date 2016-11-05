@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Avatar from 'material-ui/Avatar';
+
 
 class TeamEdit extends Component {
 
@@ -14,10 +16,15 @@ class TeamEdit extends Component {
 
     render(){
 
+        const { team: { image } } = this.props;
+
         return (
 
-            <h1> hallo </h1>
+            <div>
 
+                <Avatar size={160} src={image} />
+
+            </div>
         );
 
     }
